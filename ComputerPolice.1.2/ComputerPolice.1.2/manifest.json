@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Computer Police",
+  "version": "1.2",
+  "description": "Blocks distracting websites and redirects me back to work.",
+
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.tiktok.com/*",
+    "*://*.miraculous.to/*"
+  ],
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "blocked_sites",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },  
+
+    "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "blocked.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
